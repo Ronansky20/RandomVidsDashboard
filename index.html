@@ -28,7 +28,7 @@
     <script>
         // Array of video URLs in the playlist
         var playlist = [
-            {
+        {
                 type: "youtube",
                 id: "1OwXVKBbzao"
             },
@@ -123,6 +123,16 @@
             } else if (randomVideo.type === "tiktok") {
                 videoContainer.innerHTML = `<iframe src="https://www.tiktok.com/embed/v2/${randomVideo.id}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             }
+
+            // Add an event listener to the iframe or video element
+            var videoElement = videoContainer.querySelector("iframe");
+            videoElement.addEventListener("load", function() {
+                // Add the 'ended' event listener to play the next video
+                videoElement.contentWindow.document.querySelector("video").addEventListener("ended", function() {
+                    // Refresh the page to play the next random video
+                    location.reload();
+                });
+            });
         }
 
         // Call the function to play the initial random video
