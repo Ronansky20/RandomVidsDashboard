@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Playlist</title>
+    <style>
+        #video-player {
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <video id="video-player" controls autoplay></video>
+    </div>
+
+    <script>
+        // Array of video URLs in the playlist
+        var playlist = [
+            "https://www.youtube.com/watch?v=1OwXVKBbzao&list=LL&index=19",
+            "https://www.youtube.com/watch?v=bm2DiTfCLqI&list=LL&index=46",
+            "https://www.tiktok.com/@teejmothy/video/7244303243852123438?is_from_webapp=1&sender_device=pc",
+            "https://www.tiktok.com/@hej_oscar/video/7250251521147931931?is_from_webapp=1&sender_device=pc",
+            "https://www.tiktok.com/@nzxt/video/7252352631216016686?is_from_webapp=1&sender_device=pc",
+            "https://www.tiktok.com/@pubity/video/7251705651271945498?is_from_webapp=1&sender_device=pc",
+            "https://www.tiktok.com/@catcute244/video/7251956785047899438?is_from_webapp=1&sender_device=pc",
+            "https://www.tiktok.com/@queen_kelly70/video/7250706114206010670?is_from_webapp=1&sender_device=pc",
+            "https://www.tiktok.com/@spiralhaze/video/7249670633473314074?is_from_webapp=1&sender_device=pc",
+            "https://www.tiktok.com/@potatoesb4hoes/video/7251620549254827306?is_from_webapp=1&sender_device=pc",
+            "https://www.youtube.com/watch?v=pw2GtUhNoCM",
+            "https://www.youtube.com/watch?v=od_PmtmMDV0", 
+            "https://www.youtube.com/watch?v=JBEOypYwpw0"
+            // Add more video URLs as needed
+        ];
+
+        // Function to select a random video from the playlist
+        function getRandomVideo() {
+            var index = Math.floor(Math.random() * playlist.length);
+            return playlist[index];
+        }
+
+        // Function to play the random video
+        function playRandomVideo() {
+            var videoPlayer = document.getElementById("video-player");
+            var randomVideo = getRandomVideo();
+            videoPlayer.setAttribute("src", randomVideo);
+        }
+
+        // Call the function to play the initial random video
+        playRandomVideo();
+    </script>
+</body>
+</html>
