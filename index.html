@@ -22,7 +22,6 @@
 <body>
     <div id="video-container">
         <div id="video-player"></div>
-        <button onclick="playRandomVideo()">Play Video</button>
     </div>
 
     <script>
@@ -119,9 +118,9 @@
             var randomVideo = getRandomVideo();
 
             if (randomVideo.type === "youtube") {
-                videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${randomVideo.id}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+                videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${randomVideo.id}?autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             } else if (randomVideo.type === "tiktok") {
-                videoContainer.innerHTML = `<iframe src="https://www.tiktok.com/embed/v2/${randomVideo.id}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+                videoContainer.innerHTML = `<iframe src="https://www.tiktok.com/embed/v2/${randomVideo.id}?autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             }
 
             // Add an event listener to the iframe or video element
