@@ -4,14 +4,25 @@
     <title>Random Playlist</title>
     <style>
         #video-player {
-            width: 640px;
-            height: 360px;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #video-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
     <div id="video-container">
-        <div id="player"></div>
+        <div id="video-player"></div>
+        <button onclick="playRandomVideo()">Play Video</button>
     </div>
 
     <script>
@@ -104,13 +115,13 @@
 
         // Function to load and play the random video
         function playRandomVideo() {
-            var videoContainer = document.getElementById("player");
+            var videoContainer = document.getElementById("video-player");
             var randomVideo = getRandomVideo();
 
             if (randomVideo.type === "youtube") {
-                videoContainer.innerHTML = `<iframe width="640" height="360" src="https://www.youtube.com/embed/${randomVideo.id}?autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+                videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${randomVideo.id}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             } else if (randomVideo.type === "tiktok") {
-                videoContainer.innerHTML = `<iframe width="640" height="360" src="https://www.tiktok.com/embed/v2/${randomVideo.id}?autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+                videoContainer.innerHTML = `<iframe src="https://www.tiktok.com/embed/v2/${randomVideo.id}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             }
         }
 
