@@ -22,8 +22,76 @@
                 id: "1OwXVKBbzao"
             },
             {
+                type: "youtube",
+                id: "JBEOypYwpw0"
+            },
+            {
+                type: "youtube",
+                id: "c1s3Iekns9k"
+            },
+            {
+                type: "youtube",
+                id: "GKbpbbLrya0"
+            },
+            {
+                type: "youtube",
+                id: "Hkk1LqUj9tQ"
+            },
+            {
+                type: "youtube",
+                id: "pw2GtUhNoCM"
+            },
+            {
+                type: "youtube",
+                id: "bm2DiTfCLqI"
+            },
+            {
                 type: "tiktok",
                 id: "7251620549254827306"
+            },
+            {
+                type: "tiktok",
+                id: "7244303243852123438"
+            },
+            {
+                type: "tiktok",
+                id: "7250251521147931931"
+            },
+            {
+                type: "tiktok",
+                id: "7252352631216016686"
+            },
+            {
+                type: "tiktok",
+                id: "7252237951743085867"
+            },
+            {
+                type: "tiktok",
+                id: "7249219160062905627"
+            },
+            {
+                type: "tiktok",
+                id: "7252088036039691526"
+            },
+            {
+                type: "tiktok",
+                id: "7251545058661518619"
+            },
+            {
+                type: "tiktok",
+                id: "7249670633473314074"
+            },
+            {
+                type: "tiktok",
+                id: "7250706114206010670"
+            },
+            {
+                type: "tiktok",
+                id: "7248312150047870213"
+            },
+            {
+                type: "tiktok",
+                id: "7248936498609786139"
             }
             // Add more video objects as needed
         ];
@@ -40,9 +108,9 @@
             var randomVideo = getRandomVideo();
 
             if (randomVideo.type === "youtube") {
-                videoContainer.innerHTML = `<iframe width="640" height="360" src="https://www.youtube.com/embed/${randomVideo.id}?autoplay=1" frameborder="0" allowfullscreen></iframe>`;
+                videoContainer.innerHTML = `<iframe width="640" height="360" src="https://www.youtube.com/embed/${randomVideo.id}?autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             } else if (randomVideo.type === "tiktok") {
-                videoContainer.innerHTML = `<iframe width="640" height="360" src="https://www.tiktok.com/embed/v2/${randomVideo.id}?autoplay=1" frameborder="0" allowfullscreen></iframe>`;
+                videoContainer.innerHTML = `<iframe width="640" height="360" src="https://www.tiktok.com/embed/v2/${randomVideo.id}?autoplay=1" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
             }
         }
 
